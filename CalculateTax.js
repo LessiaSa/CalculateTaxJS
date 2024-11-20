@@ -46,59 +46,69 @@
 
 
 // Известные зарплаты сотрудников
-let salaries = {
-  "5": 10000,
-  "15": 25000,
-  "40": 50000,
-  "10": 100000
-};
+// let salaries = {
+//  "5": 10000,
+// "15": 25000,
+//  "40": 50000,
+//  "10": 100000
+// };
 // 
 // Расчет суммарных налоговых отчислений
-function calculateTotalTax(salaries) {
-  let totalTax = 0;
-  for (let count in salaries) {
-    let salary = salaries[count];
-    let tax = Math.floor(salary * 0.2); // Расчет налога (20%)
-    totalTax += tax; // Добавление налога к суммарным отчислениям
+// function calculateTotalTax(salaries) {
+    // let totalTax = 0;
+    // for (let count in salaries) {
+    //   let salary = salaries[count];
+    //   let tax = Math.floor(salary * 0.2); // Расчет налога (20%)
+    //   totalTax += tax; // Добавление налога к суммарным отчислениям
+    // }
+    // return totalTax;
+//   }
+  
+//  Расчет средних налоговых отчислений на человека
+//   function calculateAverageTax(salaries) {
+    // let totalCount = 0;
+    // let totalSalary = 0;
+    // for (let count in salaries) {
+    //   let salary = salaries[count];
+    //   totalCount += parseInt(count); // Суммирование количества людей
+    //   totalSalary += salary * parseInt(count); // Суммирование общей зарплаты
+    // }
+    // let averageTax = Math.floor((totalSalary * 0.2) / totalCount); // Расчет среднего налога на человека
+    // return averageTax;
+//   }
+//   
+  // Вызов функций для расчета и получение результатов
+  // let totalTax = calculateTotalTax(salaries);
+  // let averageTax = calculateAverageTax(salaries);
+  // 
+  // Вывод результатов
+  // console.log("Суммарные налоговые отчисления: " + totalTax + " рублей");
+  // console.log("Средние налоговые отчисления на человека: " + averageTax + " рублей");
+  
+  
+  
+  // let salaries2 = [10000, 10000, 10000, 10000, 10000, 25000, 25000, 25000, 25000, 25000,
+      //  25000, 25000, 25000, 25000, 25000, 25000, 25000, 25000, 25000, 25000, 50000, 50000, 50000,
+      //   50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 
+      //   50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000,
+      //    50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 100000, 100000,
+          // 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000];
+  // let sum = 0;
+  // 
+  // for (let i = 0; i < salaries2.length; i++) {
+      // sum += Math.floor(salaries2[i] * 0.2);
+  // }
+  // 
+  // console.log('Суммарные налоговые отчисления: ' + sum);
+  // console.log('Средние налоговые отчисления: ' + Math.floor(sum / salaries2.length));
+   
+
+  let workers = [5, 15, 40, 10];
+  let salarys = [10000, 25000, 50000, 100000];
+  let tax = 0.2;
+  let sum = 0;
+  for (let i = 0; i < salarys.length; i++) {
+    sum += Math.floor(salarys[i] * tax);
   }
-  return totalTax;
-}
-// 
-// Расчет средних налоговых отчислений на человека
-function calculateAverageTax(salaries) {
-  let totalCount = 0;
-  let totalSalary = 0;
-  for (let count in salaries) {
-    let salary = salaries[count];
-    totalCount += parseInt(count); // Суммирование количества людей
-    totalSalary += salary * parseInt(count); // Суммирование общей зарплаты
-  }
-  let averageTax = Math.floor((totalSalary * 0.2) / totalCount); // Расчет среднего налога на человека
-  return averageTax;
-}
-
-// Вызов функций для расчета и получение результатов
-let totalTax = calculateTotalTax(salaries);
-let averageTax = calculateAverageTax(salaries);
-// 
-// Вывод результатов
-console.log("Суммарные налоговые отчисления: " + totalTax + " рублей");
-console.log("Средние налоговые отчисления на человека: " + averageTax + " рублей");
-
-
-
-// let salaries2 = [10000, 10000, 10000, 10000, 10000, 25000, 25000, 25000, 25000, 25000,
-    //  25000, 25000, 25000, 25000, 25000, 25000, 25000, 25000, 25000, 25000, 50000, 50000, 50000,
-    //   50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 
-    //   50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000,
-    //    50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 100000, 100000,
-        // 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000];
-// let sum = 0;
-// 
-// for (let i = 0; i < salaries2.length; i++) {
-    // sum += Math.floor(salaries2[i] * 0.2);
-// }
-// 
-// console.log('Суммарные налоговые отчисления: ' + sum);
-// console.log('Средние налоговые отчисления: ' + Math.floor(sum / salaries2.length));
-// 
+   console.log("Суммарные налоговые отчисления: " + sum + " рублей.");
+   console.log("Средние налоговые отчисления: " + Math.floor(sum/salarys.length) + "рублей.");
